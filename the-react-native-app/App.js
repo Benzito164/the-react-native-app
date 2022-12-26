@@ -1,15 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View,SafeAreaView } from 'react-native';
- 
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import WelcomeLoginScreen from './screens/WelcomeLoginScreen';
 
+
+const Stack = createNativeStackNavigator();
+
+ 
 export default function App() {
   return (
-      <View className="flex-1 items-center justify-center bg-blue">
-      <Text className="text-blue-500">tailwindcss setup complete!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Welcome' component={WelcomeLoginScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
 
